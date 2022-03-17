@@ -6,4 +6,5 @@ Feature: Test the login funtionality
     And I enter "" username
     And I enter "" password
     When I click the "login" button
-    Then I should see the dashboad
+    Then I should see the dashboard
+    Then I should see the dashboard
