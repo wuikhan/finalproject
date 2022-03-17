@@ -10,7 +10,9 @@ public class BaseClass {
 	
 	public void openbrowser(String browser, String url) {
 		String os_name = System.getProperty("os.name");
-		if(os_name.equalsIgnoreCase("Windows 10")) {
+		
+		System.out.println("OS >> "+os_name);
+		if(os_name.equalsIgnoreCase("Windows")) {
 			if(browser.equalsIgnoreCase("Chrome")) {
 				System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/drivers/windows/chromedriver.exe");
 			}
@@ -20,6 +22,7 @@ public class BaseClass {
 			}
 		} else if (os_name.equalsIgnoreCase("Linux")) {
 			if(browser.equalsIgnoreCase("Chrome")) {
+				System.out.println("Directory >>> "+System.getProperty("user.dir"));
 				System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/drivers/linux/chromedriver");
 			}
 		} else {
