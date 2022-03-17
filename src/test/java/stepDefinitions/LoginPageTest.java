@@ -3,13 +3,14 @@ package stepDefinitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import utilities.BaseClass;
 
-public class LoginPageTest {
+public class LoginPageTest extends BaseClass {
 	
 	
 	@Given("I am on the {string} environment")
 	public void i_am_on_the_environment(String string) {
-	  System.out.println("Hello");
+	  openbrowser("chrome", string);
 	}
 	@Given("I enter {string} username")
 	public void i_enter_username(String string) {
