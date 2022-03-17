@@ -7,4 +7,5 @@ Feature: Test the login funtionality
     And I enter "" password
     When I click the "login" button
     Then I should see the dashboad
-    Then I should see the dashboad
+     Then I should see the dashboad
+
