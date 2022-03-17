@@ -2,6 +2,9 @@ target/
 .classpath
 .project
 .settings/
+.DS_Store
+drivers/.DS_Store
+drivers/mac/.DS_Store
 
 # Compiled class file
 *.class
