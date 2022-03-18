@@ -12,7 +12,7 @@ public class BaseClass {
 		String os_name = System.getProperty("os.name");
 		
 		System.out.println("OS >> "+os_name);
-		if(os_name.contains("Windows")) {
+		if(os_name.contains("Windows 10")) {
 			if(browser.equalsIgnoreCase("Chrome")) {
 				System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/drivers/windows/chromedriver.exe");
 			}
