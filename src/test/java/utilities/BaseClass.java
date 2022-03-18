@@ -12,11 +12,11 @@ public class BaseClass {
 		String os_name = System.getProperty("os.name");
 		
 		System.out.println("OS >> "+os_name);
-		if(os_name.equalsIgnoreCase("Windows 10")) {
+		if(os_name.contains("Windows")) {
 			if(browser.equalsIgnoreCase("Chrome")) {
 				System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/drivers/windows/chromedriver.exe");
 			}
-		} else if (os_name.equalsIgnoreCase("Mac OS X")) {
+		} else if (os_name.contains("Mac OS X")) {
 			if(browser.equalsIgnoreCase("Chrome")) {
 				System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/drivers/mac/chromedriver");
 			}
