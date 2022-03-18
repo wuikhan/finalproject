@@ -10,16 +10,19 @@ public class BaseClass {
 	
 	public void openbrowser(String browser, String url) {
 		String os_name = System.getProperty("os.name");
-		if(os_name.equalsIgnoreCase("Windows")) {
+		
+		System.out.println("OS >> "+os_name);
+		if(os_name.contains("Windows")) {
 			if(browser.equalsIgnoreCase("Chrome")) {
 				System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/drivers/windows/chromedriver.exe");
 			}
-		} else if (os_name.equalsIgnoreCase("Mac")) {
+		} else if (os_name.contains("Mac OS X")) {
 			if(browser.equalsIgnoreCase("Chrome")) {
 				System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/drivers/mac/chromedriver");
 			}
 		} else if (os_name.equalsIgnoreCase("Linux")) {
 			if(browser.equalsIgnoreCase("Chrome")) {
+				System.out.println("Directory >>> "+System.getProperty("user.dir"));
 				System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/drivers/linux/chromedriver");
 			}
 		} else {
