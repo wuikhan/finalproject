@@ -11,6 +11,7 @@ public class LoginPage extends BaseClass {
 	@FindBy(id="username") WebElement uname;
 	@FindBy(id="password") WebElement pwd;
 	@FindBy(id="Login") WebElement loginBtn;
+	@FindBy(id="setupLink") WebElement setupLink;
 	
 	public LoginPage() {
 		PageFactory.initElements(driver, this);
@@ -26,6 +27,10 @@ public class LoginPage extends BaseClass {
 	
 	public void clickLoginButton() {
 		loginBtn.click();
+	}
+	
+	public boolean setUpLinkPresent() {
+		return setupLink.isDisplayed();
 	}
 	
 
