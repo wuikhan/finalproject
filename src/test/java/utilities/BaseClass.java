@@ -35,5 +35,9 @@ public class BaseClass {
 		 driver.get(url);
 		 driver.manage().window().maximize();	
 	}
+	
+	public void teardown() {
+		driver.quit();
+	}
 
 }

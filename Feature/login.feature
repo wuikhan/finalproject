@@ -7,3 +7,4 @@ Feature: Test the login funtionality
     And I enter "Welcome1" password
     When I click the login button
     Then I should see the dashboad
+    And I quit the browser
