@@ -1,60 +1,81 @@
 package stepDefinitions;
 
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 import pageObjects.AccountPage_Usama;
 import utilities.BaseClass;
 
 public class AccountPageTest_Usama extends BaseClass {
 	
-	AccountPage_Usama accPage;
-
-	@Then("Accounts link should be present in the menu")
-	public void accounts_link_should_be_present_in_the_menu() {
+	AccountPage_Usama accPage = new AccountPage_Usama();
+	
+	@Then("I click the Accounts Tab in the menu")
+	public void i_click_the_accounts_tab_in_the_menu() {
 	   accPage.accountsLink();
 	}
 
-	@When("I {string} the accounts tab")
-	public void i_the_accounts_tab(String string) {
-	   accPage.accountsLink();
-	}
-
-	@When("I {string} the new button")
-	public void i_the_new_button(String string) {
+	@Then("I click the new button")
+	public void i_click_the_new_button() {
 	   accPage.newButton();
 	}
 
-	@Then("I enter {string} in the account name field {string}")
+	@Given("I should see account name field in the account page")
+	public void i_should_see_account_name_field_in_the_account_page() {
+	   accPage.accountNameField();
+	}
+
+	@Then("I enter {string} in the account name field")
 	public void i_enter_in_the_account_name_field(String name) {
-	    accPage.accountName(name);
+	   accPage.accountName(name);
+	   
 	}
 
-	@Then("In field {string} I should be able to see following options in dropdown")
-	public void in_field_i_should_be_able_to_see_following_options_in_dropdown() {
-	    accPage.ratingDropDown();
+	@Given("I should see the following options in the dropdown and select {string}")
+	public void i_should_see_the_following_options_in_the_dropdown_and_select(String option, io.cucumber.datatable.DataTable dataTable) {
+	   accPage.ratingDropDown(option);
+	   
 	}
 
-	@Then("I should be able to enter account number in field {string}")
-	public void i_should_be_able_to_enter_account_number_in_field(int num) {
-	    accPage.accountNum(num);
+	@Given("I should see account number field in the account page")
+	public void i_should_see_account_number_field_in_the_account_page() {
+	    accPage.accountNumField();
 	}
 
-	@Then("I should be able to enter phone number in field {string}")
-	public void i_should_be_able_to_enter_phone_number_in_field(int phoneNum) {
-	   accPage.phoneNumber(phoneNum);
+	@Then("I enter {string} in the account number field")
+	public void i_enter_in_the_account_number_field(int number) {
+	   accPage.accountNum(number);
+	   
 	}
 
-	@Then("I should be able to enter account site in field {string}")
-	public void i_should_be_able_to_enter_account_site_in_field(String accSite) {
-	    accPage.accountSite(accSite);
+	@Given("I should see the phone field in the account page")
+	public void i_should_see_the_phone_field_in_the_account_page() {
+	    accPage.phoneNumField();
 	}
 
-	@Then("I field {string} I should be able to see following options in dropdown")
-	public void i_field_i_should_be_able_to_see_following_options_in_dropdown() {
-	    accPage.typeDropDown();
+	@Then("I enter {string} in the phone filed")
+	public void i_enter_in_the_phone_filed(int phone) {
+	   accPage.phoneNumber(phone);
+	   
 	}
-	@Then("I should be able to save it")
-	public void i_should_be_able_to_save_it() {
+
+	@Then("I enter {string} in the account site field")
+	public void i_enter_in_the_account_site_field(String site) {
+	    accPage.accountSite(site);
+	    
+	}
+
+	@Given("I should see the following options")
+	public void i_should_see_the_following_options(String option, io.cucumber.datatable.DataTable dataTable) {
+	    accPage.typeDropDown(option);
 	    accPage.saveButton();
+	}
+
+	@Given("I should be able to click save button")
+	public void i_should_be_able_to_click_save_button() {
+	}
+	
+	@Then("I should see the account site field in the account page")
+	public void i_should_see_the_account_site_field_in_the_account_page() {
+	   accPage.accountSiteField();
 	}
 }

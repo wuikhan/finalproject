@@ -26,53 +26,77 @@ public class AccountPage_Usama extends BaseClass {
 		PageFactory.initElements(driver, this);
 	}
 	
-	public void accountName(String name) {
+	public void accountName(String name) { 
 		accName.sendKeys(name);
-		
+	  } 
+	
+	public void accountNameField() {
+		Boolean isPresent = accName.isDisplayed();
+		Assert.assertTrue(isPresent);
 	}
-	public void accountNum(int number) {
+	
+	public void accountNumField() {
+		Boolean isPresent = accNum.isDisplayed();
+		Assert.assertTrue(isPresent);
+	}
+	public void accountNum(int number) { 
 		String num = Integer.toString(number);
-		accNum.sendKeys(num);
+	  accNum.sendKeys(num); 
+	  }
+	  
+	public void phoneNumField() {
+		Boolean isPresent = phoneNum.isDisplayed();
+		Assert.assertTrue(isPresent);
 	}
-	
-	public void phoneNumber(int phNumber) {
-		String ph_Num = Integer.toString(phNumber);
-		phoneNum.sendKeys(ph_Num);
-	}
-	
-	public void accountSite(String site) {
-		accSite.sendKeys(site);
-	}
-	
-	public void accountsLink() {
-		accLink.click();
-	}
-	
-	public void newButton() {
-		newBtn.click();
-	}
-	
-	public void ratingDropDown() {
-		Select obj = new Select(ratingDD);
-		List<WebElement> menu = obj.getOptions();
-		
-		String[] expectedMenu = {"--None--", "Hot", "Warm", "Cold" };
-		for (int i=0; i<menu.size(); i++) {
-			Assert.assertEquals(menu.get(i).getText(), expectedMenu[i]);
-		}
-	}
-	
-	public void typeDropDown() {
-		Select obj = new Select(typeDD);
-		List<WebElement> menu = obj.getOptions();
-		
-		String[] expectedMenu = {"--None--", "Prospect", "Customer - Direct", "Customer - Channel", "Channel Partner/Reseller", "Installation Partner", "Technology Partner", "Other"};
-		for (int i=0; i<menu.size(); i++) {
-			Assert.assertEquals(menu.get(i).getText(), expectedMenu[i]);
-		}
-	}
-	public void saveButton() {
-		saveBtn.click();
-	}
+	  public void phoneNumber(int phNumber) { 
+		  String ph_Num =
+	  Integer.toString(phNumber); phoneNum.sendKeys(ph_Num); 
+	  }
+	  
+	  public void accountSiteField() {
+		  Boolean isPresent = accSite.isDisplayed();
+			Assert.assertTrue(isPresent);
+	  }
 
+	  public void accountSite(String site) { 
+		  accSite.sendKeys(site); 
+		  }
+	  
+	  public void accountsLink() { 
+		  accLink.click(); 
+		  }
+	  
+	  public void newButton() { 
+		  newBtn.click(); 
+		  }
+	  
+	  public void ratingDropDown(String option) { 
+		  Select obj = new Select(ratingDD);
+	  List<WebElement> menu = obj.getOptions();
+	  
+	  String[] expectedMenu = {"--None--", "Hot", "Warm", "Cold" }; 
+	  for (int i=0;i<menu.size(); i++) { 
+		  Assert.assertEquals(menu.get(i).getText(),
+	  expectedMenu[i]);
+	   }
+	  obj.selectByVisibleText(option);
+	  }
+	  
+	  public void typeDropDown(String option) { 
+		  Select obj = new Select(typeDD);
+	  List<WebElement> menu = obj.getOptions();
+	  
+	  String[] expectedMenu = {"--None--", "Prospect", "Customer - Direct",
+	  "Customer - Channel", "Channel Partner/Reseller", "Installation Partner",
+	  "Technology Partner", "Other"}; 
+	  for (int i=0; i<menu.size(); i++) {
+	  Assert.assertEquals(menu.get(i).getText(), expectedMenu[i]); 
+	  } 
+	  obj.selectByVisibleText(option);
+	  }
+	  
+	  public void saveButton() { 
+		  saveBtn.click(); 
+	  }
+	
 }
