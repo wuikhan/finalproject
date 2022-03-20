@@ -23,16 +23,35 @@ Feature: Test the account page functionality
       | Cold     |
     And I quit the browser
 
-    Scenario: I should be able to enter Account Number in the Account object
+  Scenario: I should be able to enter Account Number in the Account object
     When I enter "AccountNumber-Test" in the Account Name field
     And I enter "00012345" in the Account Number field
     And I click the Save button
     Then I should see "00012345" in Account Number field
     And I quit the browser
-    
-    Scenario: I should be able to enter Phone in Account object
+
+  Scenario: I should be able to enter Phone in Account object
     When I enter "Phone-Test" in the Account Name field
     And I enter "8001234567" in Phone field
     And I click the Save button
     Then I should see "8001234567" in Phone field
     And I quit the browser
+
+  Scenario: I should be able to enter Account Site in Account obect
+    When I enter "AccountSite-Test" in the Account Name field
+    And I enter "Test" in the Account Site field
+    And I click the Save button
+    Then I should see "Test" in the Account Site field
+    And I quit the browser
+
+  Scenario: I should see folowing fields in the Type drop down field
+    And I should see the following options in the Type field
+      | --None--                       |
+      | Prospect                   |
+      | Customer - Direct          |
+      | Customer - Channel         |
+      | Channel Partner / Reseller |
+      | Installation Partner       |
+      | Technology Partner         |
+      | Other                      |
+      And I quit the browser

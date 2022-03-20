@@ -83,6 +83,28 @@ public class AccountPageTest_Anna extends BaseClass {
 	public void i_should_see_in_phone_field(String string) {
 	   ap.phoneNumberIsSaved();
 	}
+	
+	@When("I enter {string} in the Account Site field")
+	public void i_enter_in_the_account_site_field(String string) {
+	    ap.enterAccountSite(string);
+	}
+	
+	@Then("I should see {string} in the Account Site field")
+	public void i_should_see_in_the_account_site_field(String string) {
+		ap.verifyAccountSiteIsSaved();
+	}
+	@When("I should see the following options in the Type field")
+	public void i_should_see_the_following_options_in_the_type_field(io.cucumber.datatable.DataTable dataTable) {
+		List<String> rows = dataTable.asList(String.class); 
+		  WebElement val = ap.verifyTypeDropDownFields();
+		  Select selRating = new Select(val);
+		  List<WebElement> opt = selRating.getOptions();
+		  
+		  for(int i=0; i<rows.size(); i++) {
+		
+			  Assert.assertEquals(rows.get(i), opt.get(i).getText());
+		  }
+	}
 
 	
 	

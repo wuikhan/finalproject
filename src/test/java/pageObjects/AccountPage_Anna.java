@@ -26,6 +26,9 @@ public class AccountPage_Anna extends BaseClass {
 	@FindBy(id="acc5_ileinner") WebElement savedAccNumber;
 	@FindBy(id="acc10") WebElement aPhone;
 	@FindBy(id="acc10_ileinner") WebElement verifyPhone;
+	@FindBy(id="acc23") WebElement accountSite;
+	@FindBy(id="acc23_ileinner") WebElement verifyAccSite;
+	@FindBy(id="acc6") WebElement accountType;
 	
 	public AccountPage_Anna() {
 		PageFactory.initElements(driver, this);
@@ -68,6 +71,15 @@ public class AccountPage_Anna extends BaseClass {
 	}
 	public void phoneNumberIsSaved () {
 		Assert.assertTrue(verifyPhone.isDisplayed());
+	}
+	public void enterAccountSite (String accSite) {
+		accountSite.sendKeys(accSite);
+	}
+	public boolean verifyAccountSiteIsSaved() {
+		return verifyAccSite.isDisplayed();
+	}
+	public WebElement verifyTypeDropDownFields() {
+		return accountType;
 	}
 	
 
