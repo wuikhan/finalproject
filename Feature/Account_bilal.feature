@@ -23,12 +23,12 @@ Feature: Test the Account page functionality
 
   Scenario: Add an "Account Number" in the account object
     And I should see account number field in the account page
-    Then I enter "090078601" in the account number field
+    Then I enter "456465465" in the account number field
     And I should be able to click save button
 
   Scenario: Add a "Phone" field in the account object
     And I should see the phone field in the account page
-    Then I enter "090078601" in the phone filed
+    Then I enter "456465465" in the phone filed
     And I should be able to click save button
 
   Scenario: Add an "Account Site" field in the account object
